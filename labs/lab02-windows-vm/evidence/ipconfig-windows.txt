@@ -1,0 +1,5 @@
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::9091:38e4:c3fc:d1b9%3
+   IPv4 Address. . . . . . . . . . . : 10.0.2.3
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 10.0.2.1
