@@ -1,0 +1,7 @@
+arman@labei-arman:"s uname -a
+
+Linux labei-arman 7.0.0-38-generic #38-Ubuntu SMP PREEMPT DYNAMIC Fri Sep 4 09:10:14 UTC 2026 x86_64 GNU/Linux command 'Isb release' from deb lsb-release (12.1-2build1)
+
+armanelabei-arman:"s lsb_relelase -a Command 'lsb_relelase' not found, did you mean:
+
+Try: sudo apt install <deb name>
