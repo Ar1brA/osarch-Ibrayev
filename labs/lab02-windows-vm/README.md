@@ -20,4 +20,4 @@ Date: 27.10.2026
    [VirtualBox NAT Network · 10.0.2.0/24]
           /                        \
 lab01-ubuntu                  lab02-windows
- 10.0.2.X                       10.0.2.Y
+ 10.0.2.4/24                       10.0.2.3
