@@ -1,7 +1,7 @@
 # Lab 2 — A Windows guest, and a network between them
 
-Pair: <Имя Фамилия 1> / <Имя Фамилия 2>   Driver first half: <Имя>
-Machine: <Модель ноутбука, например: Asus Zenbook, Windows 11, 16 GB RAM, 8 cores>, guests Ubuntu Server + Windows 11 Enterprise eval
+Pair: Arman Ibrayev   Driver first half: Arman
+Machine: Asus TUF gaming A15, Windows 11, 8 GB RAM, 6 cores>, guests Ubuntu Server + Windows 11 Enterprise eval
 Date: 27.10.2026
 
 ## What I did
@@ -12,7 +12,6 @@ Date: 27.10.2026
 5. Overcommitment: set 5 GB + 5 GB on a 8 GB host.
 
 ## Network diagram
-```text
               Internet
                  |
       Host laptop (Campus Wi-Fi)
