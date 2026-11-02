@@ -22,7 +22,13 @@ lab01-ubuntu                  lab02-windows
  10.0.2.4/24                       10.0.2.3
 Result:
 Metric             | Before    |    After
-Host RAM in use    | 6.2 GB    |  
+Host RAM in use    | 6.2 GB    |  I can't take a screenshot after adding more RAM because as soon as I open two virtual machines with 5 GB of memory each, my laptop immediately SHUTS DOWN, and nothing helps.
 Available RAM      |1.2 GB     |
 Commited memory    | 9/17.4    |
 Cached memory      |1.2 GB     |
+
+What I noticed
+After reallocating RAM between two virtual machines, the allocated memory became heavily overloaded; as a result, the laptop triggered a safety shutdown—demonstrating the potential consequences for the host system when RAM is reallocated incorrectly.
+What did not work for the first time
+1) Initially, Ubuntu could not successfully ping Windows because incoming ICMP requests were blocked by Windows Firewall
+2) I couldn't take photos as proof after adding the RAM because the laptop shuts down immediately.
