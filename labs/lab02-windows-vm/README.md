@@ -14,9 +14,12 @@ Date: 27.10.2026
 ## Network diagram
               Internet
                  |
-      Host laptop (Campus Wi-Fi)
+      Host laptop (Home Wi-Fi)
                  |
    [VirtualBox NAT Network · 10.0.2.0/24]
           /                        \
 lab01-ubuntu                  lab02-windows
  10.0.2.4/24                       10.0.2.3
+Result:
+Metric             | Before        After
+Host RAM in use    | 6.8 GB
