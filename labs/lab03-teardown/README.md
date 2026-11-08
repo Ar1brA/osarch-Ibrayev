@@ -62,8 +62,8 @@ Part 2
 
 ## What did not work the first time
 
-At least one thing. What I saw, what it turned out to be, what I did about it.
+I won't be able to find the official description and photos of the Samsung storage drives right away, as the website wasn't working.
 
 ## Evidence
 
-- [evidence/](evidence/) — one line per file on what it proves
+- evidence/photos amd-box.png
