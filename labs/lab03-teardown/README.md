@@ -58,8 +58,37 @@ Still needs: power supply (the only RM750e went to Build 1), CPU cooler, case, S
 Part 2
 
 
-## Result
+Commands
+Fact	Windows (PowerShell)	Linux
+CPU model	Get-CimInstance Win32_Processor | Select Name	lscpu
+Cores / threads	Get-CimInstance Win32_Processor | Select NumberOfCores, NumberOfLogicalProcessors	lscpu
+Total memory	Get-CimInstance Win32_ComputerSystem | Select TotalPhysicalMemory	free -h
+Memory modules and speed	Get-CimInstance Win32_PhysicalMemory | Select DeviceLocator, Speed, ConfiguredClockSpeed, SMBIOSMemoryType, FormFactor	sudo dmidecode -t memory
+Disk model and type	Get-PhysicalDisk | Select FriendlyName, MediaType, BusType, Size	lsblk -d -o NAME,MODEL,ROTA,TRAN,SIZE
+Free space	Get-Volume C	df -h /
+Architecture	$env:PROCESSOR_ARCHITECTURE	uname -m
+What each system reported
+Fact	Windows	Linux (Ubuntu VM)
+CPU model	AMD Ryzen 5 4600H with Radeon Graphics (MaxClockSpeed 2994 MHz)	AMD Ryzen 5 4600H with Radeon Graphics
+Cores / threads	2 cores, 2 logical processors	2 cores, 1 thread per core (2 logical CPUs)
+Total memory	4820176896 bytes (about 4.49 GiB)	3.3 GiB total (2.8 GiB free), swap 2.0 GiB
+Memory modules and speed	Win32_PhysicalMemory returned no rows (empty output)	dmidecode printed only the header (SMBIOS 2.5) — no memory devices, no speed
+Disk model and type	VBOX HARDDISK, BusType SATA, MediaType Unspecified, 85899345920 bytes (80 GiB)	sda — VBOX HARDDISK, SATA, 25 GB (virtual); sr0 — VBOX CD-ROM
+Free space	C: NTFS, 44.98 GB free of 78.92 GB, Healthy	/dev/sda2: 25 GB, 5.2 GB used, 19 GB free (23 %)
+Architecture	AMD64	x86_64
+How the names differ, and what the VM showed
 
-## What did not work the first time
+The same fact has different names in each system: the CPU is Name in PowerShell but Model name in lscpu, the architecture is AMD64 on Windows but x86_64 on Linux, and disk sizes are raw bytes in PowerShell (85899345920) but human units in Linux (25G). Both guests showed the same picture of a virtual machine: the host CPU model (Ryzen 5 4600H) but only the 2 CPUs given to the VM (Linux also reported Hypervisor vendor: KVM), only the memory given to the VM (4.49 GiB on Windows, 3.3 GiB on Linux), a virtual "VBOX HARDDISK" on SATA instead of a real drive, and no physical memory modules or speed from Win32_PhysicalMemory or dmidecode. I ran everything inside the VMs, not on the physical host, so these hidden facts (memory module type and speed, the real disk model) are the ones I could not read.
 
-I won't be able to find the official description and photos of the Samsung storage drives right away, as the website wasn't working.
+What did not work the first time
+
+sudo "not found" on the Linux VM. I ran sudo dmidecode -t memory and got Command '`sudo' not found, did you mean: command 'sudo' from deb sudo. The cause was a stray backtick character in front of sudo that I typed when copying the command. I retyped it starting directly with the letter s and it worked.
+The VM console did not react to typing. Commands I typed seemed to do nothing, and I could not paste text from the host into the VM console. I could not get SSH with port forwarding working in time, so I ran each command by hand one at a time and photographed the console output.
+dmidecode showed no memory modules. The output stopped after "SMBIOS 2.5 present." This is expected in a VM: the hypervisor does not expose real memory modules and speed.
+Windows showed empty or unspecified values for the VM. Get-PhysicalDisk printed MediaType: Unspecified, and Get-CimInstance Win32_PhysicalMemory printed no rows, so it gave no module size or speed. This is normal inside a VM, so I used BusType/FriendlyName for the disk and Win32_ComputerSystem for the total memory.
+
+Evidence
+
+evidence/windows-specs.txt — 
+evidence/linux-specs.txt — 
+evidence/photos/ — 
