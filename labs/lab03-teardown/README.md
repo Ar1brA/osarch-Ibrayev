@@ -35,6 +35,26 @@ What it is (verify): 750 W ATX power supply, 80 PLUS Gold, fully modular, ATX 3.
 
 What it is: the cooler included in the box of the Ryzen 5 7600 (AMD's product page lists "Wraith Stealth" as the included cooler). Connects to: the processor's AM5 socket (mounts on the board's AM5 retention bracket). Limit: sized for the 65 W Ryzen 5 7600 — the amount of heat it can remove is what limits it. Source: https://www.amd.com/ja/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html
 
+Build 1 — AMD / DDR5 / NVMe
+Part	Model	Why it fits here
+Processor	AMD Ryzen 5 7600	Socket AM5, matches the board
+Motherboard	ASUS PRIME B650M-A	AM5 socket; B650 supports Ryzen 7000
+Memory	Kingston FURY Beast DDR5-5600 16 GB	Ryzen 7000 and this board are DDR5-only
+SSD	Samsung 990 PRO 1 TB	Board has M.2 Key M slots (PCIe 5.0 / 4.0), drive is M.2 2280 PCIe 4.0
+Power supply	Corsair RM750e	24-pin + CPU 8-pin for the board, 750 W is plenty for a 65 W CPU
+Cooler	AMD Wraith Stealth	Included with the Ryzen 5 7600, mounts on AM5
+
+Still needs: case, operating system, monitor/keyboard. GPU
+
+Build 2 — Intel / DDR4 / SATA
+Part	Model	Why it fits here
+Processor	Intel Core i5-13400	Socket LGA1700, matches the board
+Motherboard	MSI PRO B760M-A WIFI DDR4	LGA1700; B760 supports 13th-gen (TODO: BIOS update needed?)
+Memory	Crucial DDR4-3200 16 GB	This board has DDR4 slots only
+SSD	Samsung 870 EVO 1 TB	SATA 2.5" — board has SATA ports; needs data + power cable
+
+Still needs: power supply (the only RM750e went to Build 1), CPU cooler, case, SATA data cable, operating system.
+
 Part 2
 
 
