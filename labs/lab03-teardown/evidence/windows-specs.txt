@@ -1,1 +1,37 @@
+$ Get-CimInstance Win32_Processor | Select Name, NumberOfCores, NumberOfLogicalProcessors, MaxClockSpeed
+
+Name                                            NumberOfCores NumberOfLogicalProcessors MaxClockSpeed
+----                                            ------------- ------------------------- -------------
+AMD Ryzen 5 4600H with Radeon Graphics                      2                         2          2994
+
+
+
+$ Get-CimInstance Win32_PhysicalMemory | Select DeviceLocator, Capacity, Speed, ConfiguredClockSpeed, SMBIOSMemoryType, FormFactor
+
+$ Get-PhysicalDisk | Select FriendlyName, MediaType, BusType, Size
+
+FriendlyName  MediaType   BusType        Size
+------------  ---------   -------        ----
+VBOX HARDDISK Unspecified SATA    85899345920
+
+
+
+$ Get-Volume C
+
+DriveLetter FriendlyName FileSystemType DriveType HealthStatus OperationalStatus SizeRemaining     Size
+----------- ------------ -------------- --------- ------------ ----------------- -------------     ----
+C                        NTFS           Fixed     Healthy      OK                     44.98 GB 78.92 GB
+
+
+
+$ $env:PROCESSOR_ARCHITECTURE
+AMD64
+
+$ Get-CimInstance Win32_ComputerSystem | Select TotalPhysicalMemory
+
+TotalPhysicalMemory
+-------------------
+         4820176896
+
+
 
