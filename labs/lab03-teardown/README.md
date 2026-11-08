@@ -1,5 +1,7 @@
 # Lab 3 — Teardown, and the same machine from the command line
 
+Ibrayev Arman. Date: 08.11.2026
+
 Part 1 — Ten parts
 1. AMD Ryzen 5 7600
 
@@ -32,6 +34,8 @@ What it is (verify): 750 W ATX power supply, 80 PLUS Gold, fully modular, ATX 3.
 
 
 What it is: the cooler included in the box of the Ryzen 5 7600 (AMD's product page lists "Wraith Stealth" as the included cooler). Connects to: the processor's AM5 socket (mounts on the board's AM5 retention bracket). Limit: sized for the 65 W Ryzen 5 7600 — the amount of heat it can remove is what limits it. Source: https://www.amd.com/ja/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html
+
+Part 2
 
 
 ## Result
