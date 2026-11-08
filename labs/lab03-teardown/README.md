@@ -63,7 +63,3 @@ Part 2
 ## What did not work the first time
 
 I won't be able to find the official description and photos of the Samsung storage drives right away, as the website wasn't working.
-
-## Evidence
-
-- evidence/photos amd-box.png
