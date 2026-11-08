@@ -2,7 +2,7 @@
 
 Part 1 — Ten parts
 1. AMD Ryzen 5 7600
-evidence/photos/ryzen5-7600.png
+
 What it is: 6 cores / 12 threads, 3.8 GHz base, up to 5.1 GHz boost, 32 MB L3 cache, 65 W TDP. Connects to: socket AM5; its memory controller supports DDR5 only (DDR5-5200 with two DIMMs). Limit: works only in AM5 boards with DDR5 — it cannot use DDR4 and cannot be put in an LGA1700 board. Ships with the AMD Wraith Stealth cooler. Source: https://www.amd.com/ja/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html
 3. Intel Core i5-13400
 
