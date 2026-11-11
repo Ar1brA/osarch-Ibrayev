@@ -1,34 +1,32 @@
 All four machines share the same platform: AM5 socket, GIGABYTE B850M FORCE (mATX, DDR5, M.2), a 1 TB NVMe SSD, a 650 W PSU and a mATX case. Only the CPU, memory, operating system and monitor change, because that is where the four loads differ. Prices are in KZT; every row is in `budget.csv`.
 
----
-
 Build 1 — accountant
-**Load:** Spreadsheets and accounting software (I assume 1C or a similar Windows-only program), plus a browser with a few tabs and PDFs. About 8 hours a day, one or two programs at once. Nothing here is heavy for the CPU.
-**Bottleneck:** Reliability and the screen, not speed. This person stares at tables of numbers all day, so a clear 27" monitor and a machine that does not break matter more than CPU or GPU. The one resource that could run out is memory (16 GB is the minimum I allow).
+Load: Spreadsheets and accounting software (I assume 1C or a similar Windows-only program), plus a browser with a few tabs and PDFs. About 8 hours a day, one or two programs at once. Nothing here is heavy for the CPU.
+Bottleneck: Reliability and the screen, not speed. This person stares at tables of numbers all day, so a clear 27" monitor and a machine that does not break matter more than CPU or GPU. The one resource that could run out is memory (16 GB is the minimum I allow).
 Trade-off: I took a Ryzen 5 with integrated graphics, 16 GB in one module and no discrete GPU. I gave up memory headroom and dual-channel speed. That is acceptable here: a large spreadsheet plus the accounting program fits in 16 GB, and the free slot lets us add a second module later. The money saved went to a licensed Windows 11 Pro and a 27" IPS monitor.
-**Alternative I did not take:** Ryzen 7 and 32 GB. The accountant would not notice the difference.
-**Total:** 533 517 KZT (`budget.csv`, accountant rows)
+Alternative I did not take:** Ryzen 7 and 32 GB. The accountant would not notice the difference.
+Total: 533 517 KZT 
 
 Build 2 — sales manager
 Load: CRM in a browser, 30–40 tabs, Excel, and video calls for several hours a day, often all at once.
-Bottleneck:** Memory. Many browser tabs plus a video call can use more than 16 GB, and then the system starts swapping to the SSD and the call stutters. The CPU is not the problem.
-Trade-off:** I put the money into memory (2 × 16 GB = 32 GB, dual-channel) and kept the same mid-range Ryzen 5 as the accountant. I gave up CPU cores and a better monitor. That is acceptable because this person's CPU is mostly idle in calls and the monitor is only used for reading a CRM.
+Bottleneck: Memory. Many browser tabs plus a video call can use more than 16 GB, and then the system starts swapping to the SSD and the call stutters. The CPU is not the problem.
+Trade-off: I put the money into memory (2 × 16 GB = 32 GB, dual-channel) and kept the same mid-range Ryzen 5 as the accountant. I gave up CPU cores and a better monitor. That is acceptable because this person's CPU is mostly idle in calls and the monitor is only used for reading a CRM.
 Alternative I did not take:** Ryzen 7 with 16 GB. It would be faster in benchmarks and slower in the real day.
-Total:** 646 962 KZT (`budget.csv`, sales rows)
+Total: 646 962 KZT 
 
 Build 3 — web developer
 Load: A code editor, several browsers, Docker containers, sometimes a virtual machine, and a local database, all at once. Compiling and running tests uses the CPU in bursts.
 Bottleneck: Memory first (containers and a VM each take a few GB), then CPU cores for builds. 16 GB would fill up quickly.
 Trade-off: I took an 8-core Ryzen 7 7700 (sold without a cooler, so I added a DeepCool AK400) and 32 GB. I gave up a discrete GPU and Windows. I chose Ubuntu 24.04 LTS, which is licensed (free and open-source licences, no fee) and suitable because Docker runs natively on Linux and uses less memory than on Windows. Saving the Windows licence paid for the QHD monitor, where a developer fits more code on screen.
 Alternative I did not take:** 64 GB of memory. It would cost about another 255,000 KZT and I do not expect this person to need it yet.
-Total:** 625 873 KZT (`budget.csv`, developer rows)
+Total: 625 873 KZT 
 
 ### Build 4 — designer
 Load: Large images and layouts in Photoshop/Figma-type tools (I assume photo and layout work, not long video editing), many layers, several large files open at once. Colour has to be right, because the work is judged on screen and in print.
 Bottleneck: The monitor first (a screen with poor colour makes every decision wrong), then memory (big files in layers), then storage speed (NVMe helps open large files). I assume the GPU is the lowest priority for 2D work.
 Trade-off: I spent the most on the monitor (Dell P2723DE, QHD IPS) and on 32 GB. I gave up a discrete graphics card: the Ryzen 5 7600's integrated graphics has to carry the screen for now. That is the part of this build I expect to hurt first (see question 3 in the README). The platform is chosen so a GPU can be added later: AM5 with a PCIe x16 slot and a 650 W PSU.
 Alternative I did not take: A Ryzen 5 with an RTX-class GPU and a cheaper monitor. For colour work I judged the monitor more important than the GPU.
-Total: 754 062 KZT (`budget.csv`, designer rows)
+Total: 754 062 KZT 
 
 ---
 
