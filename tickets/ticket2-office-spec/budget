@@ -1,4 +1,5 @@
 role,component,model,price_kzt,source,date
+
 accountant,CPU,AMD Ryzen 5 7600 BOX (AM5; integrated GPU; cooler in box),101175,https://alfa.kz/parts/cpu/amd/ryzen_5/8626751, 2026-11-09
 accountant,Motherboard,GIGABYTE B850M FORCE rev 1.1 (AM5; mATX; 2x DDR5; M.2),69662,https://alfa.kz/parts/motherboard/gigabyte/b850m_force__rev__1_1_/amd_b850/8553475, 2026-11-11
 accountant,Memory,Lexar LD5U16G56C46ST-BGS 16Gb DDR5 5600 MHz (1 module),113860,https://alfa.kz/parts/ram/lexar/ddr5/8549128, 2026-11-09
@@ -7,7 +8,8 @@ accountant,PSU,FSP VIC-650BD 650 W,19308,https://alfa.kz/parts/power-supplies/fs
 accountant,Case,Deepcool Matrexx 30 (mATX),18951,https://alfa.kz/parts/cases/deepcool/matx/8583730, 2026-11-09
 accountant,OS, Microsoft Win 11 Pro 64Bit Russian 1pk DSP OEI DVD FQC-10548 Windows 11,72344,https://www.apltech.kz/tovar/199909/microsoft-win-11-pro-64bit-russian-1pk-dsp-oei-dvd-fqc-10548, 2026-11-09
 accountant,Monitor,LG 27MP400-B 27in IPS FHD,54900,https://satu.kz/p135476865-monitor-27mp400-badrz.html, 2026-11-09
-accountant,TOTAL,,533 517,,
+accountant,TOTAL,533 517
+
 sales,CPU,AMD Ryzen 5 7600 BOX (AM5; integrated GPU; cooler in box),100760,https://alfa.kz/parts/cpu/amd/ryzen_5/8626751, 2026-11-09
 sales,Motherboard,GIGABYTE B850M FORCE rev 1.1 (AM5; mATX; 2x DDR5; M.2),69662,https://alfa.kz/parts/motherboard/gigabyte/b850m_force__rev__1_1_/amd_b850/8553475, 2026-11-11
 sales,Memory,Lexar LD5U16G56C46ST-BGS 16Gb DDR5 5600 MHz (2 module),227720,https://alfa.kz/parts/ram/lexar/ddr5/8549128, 2026-11-09
@@ -16,7 +18,8 @@ sales,PSU,FSP VIC-650BD 650 W,19308,https://alfa.kz/parts/power-supplies/fsp_gro
 sales,Case,Deepcool Matrexx 30 (mATX),18951,https://alfa.kz/parts/cases/deepcool/matx/8583730, 2026-11-09
 sales,OS, Microsoft Win 11 Pro 64Bit Russian 1pk DSP OEI DVD FQC-10548 Windows 11,72344,https://www.apltech.kz/tovar/199909/microsoft-win-11-pro-64bit-russian-1pk-dsp-oei-dvd-fqc-10548, 2026-11-09
 sales,Monitor,LG 27MP400-B 27in IPS FHD,54900,https://satu.kz/p135476865-monitor-27mp400-badrz.html, 2026-11-09
-sales,TOTAL,,646 962,,
+sales,TOTAL,646 962
+
 developer,CPU,AMD Ryzen 7 7700 OEM (AM5; 8 cores; integrated GPU),88125,https://alfa.kz/parts/cpu/amd/ryzen_7/8098520, 2026-11-09
 developer,Cooler,DeepCool AK400 ZERO DARK (OEM CPU has no cooler),19560,https://satu.kz/p119532580-kuler-dlya-protsessora.html, 2026-11-11
 developer,Motherboard,GIGABYTE B850M FORCE rev 1.1 (AM5; mATX; 2x DDR5; M.2),69662,https://alfa.kz/parts/motherboard/gigabyte/b850m_force__rev__1_1_/amd_b850/8553475, 2026-11-11
@@ -26,7 +29,8 @@ developer,PSU,FSP VIC-650BD 650 W,19308,https://alfa.kz/parts/power-supplies/fsp
 developer,Case,Deepcool Matrexx 30 (mATX),18951,https://alfa.kz/parts/cases/deepcool/matx/8583730, 2026-11-09
 developer,OS,Ubuntu 24.04 LTS Desktop (free; GPL and other open-source licences),0,https://ubuntu.com/download/desktop, 2026-11-11
 developer,Monitor,iiyama XUB2797QSN-B2 27in QHD IPS,99230,https://satu.kz/p131755556-monitor-liyama-xub2797qsn.html, 2026-11-09
-developer,TOTAL,,625 873,,
+developer,TOTAL,625 873
+
 designer,CPU,AMD Ryzen 5 7600 BOX (AM5; integrated GPU; cooler in box),100760,https://alfa.kz/parts/cpu/amd/ryzen_5/8626751, 2026-11-09
 designer,Motherboard,GIGABYTE B850M FORCE rev 1.1 (AM5; mATX; 2x DDR5; M.2),69662,https://alfa.kz/parts/motherboard/gigabyte/b850m_force__rev__1_1_/amd_b850/8553475, 2026-11-11
 designer,Memory,Lexar LD5U16G56C46ST-BGS 16Gb DDR5 5600 MHz (2 module),227720,https://alfa.kz/parts/ram/lexar/ddr5/8549128, 2026-11-09
@@ -35,6 +39,7 @@ designer,PSU,FSP VIC-650BD 650 W,19308,https://alfa.kz/parts/power-supplies/fsp_
 designer,Case,Deepcool Matrexx 30 (mATX),18951,https://alfa.kz/parts/cases/deepcool/matx/8583730, 2026-11-09
 designer,OS, Microsoft Win 11 Pro 64Bit Russian 1pk DSP OEI DVD FQC-10548 Windows 11,72344,https://www.apltech.kz/tovar/199909/microsoft-win-11-pro-64bit-russian-1pk-dsp-oei-dvd-fqc-10548, 2026-11-09
 designer,Monitor,Dell P2723DE 27in QHD IPS (colour monitor),162000,https://satu.kz/p130584482-monitor-dell-monitor.html, 2026-11-09
-designer,TOTAL,,754 062,,
-ALL,GRAND TOTAL,,2 560 414,,
-ALL,RESERVE (3000000 minus grand total),,439 586,,
+designer,TOTAL,754 062
+
+ALL,GRAND TOTAL,2 560 414
+ALL,RESERVE (3000000 minus grand total),439 586
