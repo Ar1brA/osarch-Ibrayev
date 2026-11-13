@@ -1,0 +1,37 @@
+$ cat /proc/mdstat
+Personalities : [raid1] 
+md0 : active raid1 sdb1[0]
+      1089536 blocks super 1.2 [2/1] [U_]
+      bitmap: 0/1 pages [0KB], 65536KB chunk
+
+unused devices: <none>
+
+$ sudo mdadm --detail /dev/md0
+/dev/md0:
+           Version : 1.2
+     Creation Time : Wed Nov 11 18:15:14 2026
+        Raid Level : raid1
+        Array Size : 1089536 (1064.00 MiB 1115.68 MB)
+     Used Dev Size : 1089536 (1064.00 MiB 1115.68 MB)
+      Raid Devices : 2
+     Total Devices : 1
+       Persistence : Superblock is persistent
+
+     Intent Bitmap : Internal
+
+       Update Time : Fri Nov 13 14:49:02 2026
+             State : clean, degraded 
+    Active Devices : 1
+   Working Devices : 1
+    Failed Devices : 0
+     Spare Devices : 0
+
+Consistency Policy : bitmap
+
+              Name : lab01-arman:0  (local to host lab01-arman)
+              UUID : 1d8aa207:c80b7aeb:e4908883:7e84911c
+            Events : 21
+
+    Number   Major   Minor   RaidDevice State
+       0       8       17        0      active sync   /dev/sdb1
+       -       0        0        1      removed
