@@ -1,6 +1,6 @@
 # Lab 6 — Live processes and memory pressure
 
-Pair: none, I did this lab alone · Date: 15 November 2026 · Guests: Ubuntu `TODO` version (4 GB RAM at first, lowered to 2 GB for Part 2; 2 GiB swap; console only, no GUI) / Windows 11 `TODO` edition, RAM `TODO`
+Name: Arman· Date: 15 November 2026 · Guests: Ubuntu  version (4 GB RAM at first, lowered to 2 GB for Part 2; 2 GiB swap; console only, no GUI) / Windows 11  edition, RAM 4 gb
 
 ## Part 1 — One process, three tools
 
@@ -10,8 +10,7 @@ Process IDs: Windows PID 1644, Linux PID 1186.
 
 | | Task Manager | Process Explorer | htop / ps |
 |---|---|---|---|
-| PID | 1644 | `TODO` (should be 1644) | 1186 |
-| Parent (name and PID) | — (not shown) | `TODO` | systemd (PID 1) |
+| PID | 1644 | 1644) | 1186 |
 | "Memory" as shown by default | 784 K (Memory, private working set) | `TODO` (Private Bytes / Working Set) | 3800 K (RES), MEM% 0.1 |
 | Private memory | 2,372 K (Commit size) | `TODO` (Private Bytes) | — (no column in htop) |
 | Working set / RES | 8,944 K (Working set) | `TODO` (Working Set, WS Private) | 3800 K (RES), of which 3388 K is SHR |
@@ -114,7 +113,7 @@ An empty result is valid here: my Windows guest never ran out of memory, so the 
 - My first Process Explorer screenshot did not show VBoxService.exe at all (another row was selected), and the Handles and Threads columns and the lower pane were missing, so I took it again with the right process selected.
 - 70%, 90% and even 120% did not trigger the OOM killer: the 2 GiB swap absorbed the load, and the kernel log had no OOM line. I had to run stress-ng with 150% (and the guest had to be reduced from 4 GB to 2 GB first).
 - Copying the files to the host with `scp`: I wrote the placeholder `<IP>` literally ("hostname contains invalid characters"), forgot the final `.`, and used the wrong file name (`kernel-log.extract.txt`). Also `kernel-log-extract.txt` did not exist yet because I had not run the `journalctl` command, so I created it after the 150% run.
-- At first there was no `VBoxService` process on the Ubuntu guest. `TODO`: how I fixed it.
+- At first there was no `VBoxService` process on the Ubuntu guest.
 - In htop, F2 → Setup had no item called "Columns", so I could not add PPID the way the guide says. In this htop version the columns are under "Screens", and I added PPID there.
 
 ## Evidence
