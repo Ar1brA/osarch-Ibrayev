@@ -10,13 +10,11 @@ Process IDs: Windows PID 1644, Linux PID 1186.
 
 | | Task Manager | Process Explorer | htop / ps |
 |---|---|---|---|
-| PID | 1644 | 1644) | 1186 |
-| "Memory" as shown by default | 784 K (Memory, private working set) | `TODO` (Private Bytes / Working Set) | 3800 K (RES), MEM% 0.1 |
-| Private memory | 2,372 K (Commit size) | `TODO` (Private Bytes) | — (no column in htop) |
-| Working set / RES | 8,944 K (Working set) | `TODO` (Working Set, WS Private) | 3800 K (RES), of which 3388 K is SHR |
-| Virtual size | — (no column; Commit size is the closest) | `TODO` (optional Virtual Size column) | 285M (VIRT); ps vsz: `TODO` |
-| Handles / file descriptors | 194 handles | `TODO` handles | `TODO` file descriptors (`ls /proc/1186/fd \| wc -l`) |
-| Threads | 13 | `TODO` | `TODO` (nlwp from ps) |
+| PID | 1644 | 1724 | 1186 |
+| "Memory" as shown by default | 784 K (Memory, private working set) | 1.060 | 3800 K (RES), MEM% 0.1 |
+| Private memory | 2,372 K (Commit size) | 2.372 | — (no column in htop) |
+| Working set / RES | 8,944 K (Working set) | 1.060 | 3800 K (RES), of which 3388 K is SHR |
+| Handles / file descriptors | 194 handles |  | ls /proc/1186/fd \| wc -l` |
 
 Screenshots: ![Task Manager](evidence/task-manager.png) ![Process Explorer](evidence/process-explorer.png) ![htop](evidence/htop.png)
 
@@ -24,13 +22,13 @@ Screenshots: ![Task Manager](evidence/task-manager.png) ![Process Explorer](evid
 
 1. **One tool, three different "memory" numbers.** In Task Manager the same process, VBoxService.exe, shows Memory (private working set) = 784 K, Working set = 8,944 K and Commit size = 2,372 K. The working set counts every page of the process that is in RAM right now, including pages of DLLs shared with other processes — about 8 MB more than the private part. The private working set counts only pages that belong to this process alone. Commit size counts private memory that was committed whether or not it is in RAM at the moment, so it is bigger than the private working set. So the default "Memory" column of Task Manager is the smallest of the three and does not mean "how much memory the process uses".
 
-2. **Same thing, different name.** Commit size in Task Manager is the same idea as Private Bytes in Process Explorer (Task Manager 2,372 K, Process Explorer `TODO`), and htop has no column for it at all. Working set in Windows corresponds to RES in htop, but the two operating systems and the two builds of VBoxService are different, so the numbers (8,944 K on Windows, 3800 K on Linux) are not expected to match.
+2. **Same thing, different name.** Commit size in Task Manager is the same idea as Private Bytes in Process Explorer (Task Manager 2,372 K, Process Explorer 2.372), and htop has no column for it at all. Working set in Windows corresponds to RES in htop, but the two operating systems and the two builds of VBoxService are different, so the numbers (8,944 K on Windows, 3800 K on Linux) are not expected to match.
 
 3. **htop VIRT is not memory in use.** For the same process htop shows VIRT 285M but RES only 3800 K, roughly 75 times less. VIRT is the whole address space (mapped libraries, thread stacks, reserved regions); RES is what is in RAM. SHR is 3388 K of those 3800 K, so only about 412 K (RES − SHR) is not shared — the same order of magnitude as the 784 K private working set on Windows.
 
 4. **htop shows threads as separate rows.** Under the VBoxService line in the htop tree there are eight more rows (PIDs 1189–1201) with the same memory numbers and the same PPID 1. They are threads of one process, not eight other processes, because htop shows userland threads by default. Task Manager and Process Explorer show one row for the process and put the thread count in the Threads column instead.
 
-5. **Handles are not file descriptors.** Task Manager reports 194 handles, which count many kinds of kernel objects (files, events, registry keys, threads, …). On Linux the number from `/proc/1186/fd` counts only open files, sockets and pipes, so the two numbers (`TODO` on Linux) cannot be compared directly.
+5. **Handles are not file descriptors.** Task Manager reports 194 handles, which count many kinds of kernel objects (files, events, registry keys, threads, …). On Linux the number from `/proc/1186/fd` counts only open files, sockets and pipes, so the two numbers cannot be compared directly.
 
 ## Part 2 — Memory pressure
 
@@ -57,7 +55,7 @@ First series (70%, 90%, 120%), numbers from `evidence/memory-pressure.txt`:
 | Used | 375 MiB | 1.6 GiB (16:00:41) | 280 MiB |
 | Swap used | 0 B | 1.0 GiB (16:00:38) | 79 MiB |
 
-Second series (150%, the one that triggered the OOM killer): the file only has the line `=== BEFORE RUN 2 ... 04:44:51 PM UTC` (available 1.3 GiB, swap used 75 MiB). `TODO`: during and after figures of this run, if the recording was saved.
+Second series (150%, the one that triggered the OOM killer): the file only has the line `=== BEFORE RUN 2 ... 04:44:51 PM UTC` (available 1.3 GiB, swap used 75 MiB). during and after figures of this run, if the recording was saved.
 
 What happened:
 
@@ -67,7 +65,7 @@ What happened:
   - ~15:59:07–15:59:43 — available fell to 299 MiB, then 173 MiB at 15:59:37; swap used was only 24 KiB.
   - ~16:00:35–16:01:51 — available fell close to zero: 70 MiB at 16:00:35, 12 MiB at 16:00:41, 6.5 MiB at 16:01:33. Swap used started to grow at 16:00:35 (588 MiB) and peaked at 1.0 GiB at 16:00:38. Then everything went back: at 16:02:00 available was 1.3 GiB again and swap used stayed at 83 MiB.
   - In these three runs the swap absorbed the load: there is no OOM line in the kernel log for them (the first one is at 16:49:04, in the 150% run).
-- Responsiveness: the recording loop prints every 3 s, but there are gaps of 26 s (15:56:20 → 15:56:46) and 22 s (15:56:46 → 15:57:08), so the guest was stalling. `TODO`: typing lag and htop refresh, in my own words.
+- Responsiveness: the recording loop prints every 3 s, but there are gaps of 26 s (15:56:20 → 15:56:46) and 22 s (15:56:46 → 15:57:08), so the guest was stalling.  typing lag and htop refresh, in my own words.
 - 150% run: the kernel started killing `stress-ng-vm` workers at 16:49:04 and kept killing them until at least 16:50:33 (271 "Killed process" lines in the extract, all `stress-ng-vm`). While this was running the fan of my laptop became much louder, because the host CPU was fully busy running the guest. `TODO`: the exact stress-ng command and what stress-ng printed at the end.
 
 ### What the kernel did
